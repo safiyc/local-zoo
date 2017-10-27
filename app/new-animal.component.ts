@@ -26,7 +26,7 @@ import { Animal } from './animal.model';
     <input #newLocation class='form-control'>
   </div>
   <div class='form-group'>
-    <label>Enter Caretakers</label>
+    <label>Enter Number of Caretakers</label>
     <input #newCaretakers class='form-control'>
   </div>
   <div class='form-group'>

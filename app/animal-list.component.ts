@@ -33,7 +33,7 @@ import { Animal } from './animal.model';
         <td>{{currentAnimal.diet}}</td>
         <td>{{currentAnimal.location}}</td>
         <td>{{currentAnimal.caretakers}}</td>
-        <td>S{{currentAnimal.sex}}</td>
+        <td>{{currentAnimal.sex}}</td>
         <td>{{currentAnimal.like}}</td>
         <td>{{currentAnimal.dislike}}</td>
         <td><button (click)="editButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Edit!</button></td>

@@ -5,17 +5,19 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
   <div class='container'>
-    <div class='center-text'>
-      <h1>{{title}}</h1>
+    <div>
+      <h1 class='center-text'>{{title}}</h1>
     </div>
     <div class='row'>
       <div class='col s3'>
-        <button class="btn-large">Add Animal</button>
+        <button (click)="newButtonClicked()" class="btn-large">Add Animal</button>
       </div>
       <div class='col s9'>
         <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
         <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
-        <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+        <div *ngIf='addNewAnimal'>
+          <new-animal (newAnimalSender)="addAnimal($event)" (newButtonClickedSender)="finishedAdding()"></new-animal>
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +31,7 @@ export class AppComponent {
     new Animal('Northern Bluefeathered Eagle', 'Buster', 2, 'Rodents', 'Northern Trail', 4, 'Male', 'Flying along a wall', 'Water'),
   ];
   selectedAnimal = null;
+  addNewAnimal = false;
 
   addAnimal(newAnimalFromChild: Animal) {
     this.masterAnimalList.push(newAnimalFromChild);
@@ -41,4 +44,13 @@ export class AppComponent {
   finishedEditing() {
     this.selectedAnimal = null;
   }
+
+  newButtonClicked() {
+    this.addNewAnimal = true;
+  }
+
+  finishedAdding() {
+    this.addNewAnimal = false;
+  }
+
 }

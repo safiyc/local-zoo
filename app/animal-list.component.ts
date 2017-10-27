@@ -44,18 +44,6 @@ import { Animal } from './animal.model';
     </tbody>
   </table>
   `
-
-  // <ul *ngFor='let currentAnimal of childAnimalList | age:filterByAge' >
-  //   <li class="collapsible" data-collapsible="accordion">
-  //     <div class="collapsible-header">
-  //       <p>Name: {{currentAnimal.name}}</p>
-  //     </div>
-  //     <div class="collapsible-body">
-  //       <p>Species: {{currentAnimal.species}}</p>
-  //     </div>
-  //   </li>
-  // </ul>
-
 })
 
 export class AnimalListComponent {

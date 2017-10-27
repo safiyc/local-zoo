@@ -5,24 +5,41 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'animal-list',
   template:  `
-  <select (change)="onChange($event.target.value)">
+  <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
     <option value="allAnimals">All Animals</option>
     <option value="youngAnimals">Young Animals</option>
     <option value="oldAnimals">Old Animals</option>
   </select>
-  <ul>
-    <li *ngFor='let currentAnimal of childAnimalList | age:filterByAge'>
-      <h5>{{currentAnimal.name}}</h5>
-      <p>{{currentAnimal.species}}</p>
-      <p>{{currentAnimal.age}}</p>
-      <p>{{currentAnimal.diet}}</p>
-      <p>{{currentAnimal.location}}</p>
-      <p>{{currentAnimal.caretakers}}</p>
-      <p>{{currentAnimal.sex}}</p>
-      <p>{{currentAnimal.like}}</p>
-      <p>{{currentAnimal.dislike}}</p>
-      <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
-    </li>
+  <table class='striped'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Specifies</th>
+        <th>Age</th>
+        <th>Diet</th>
+        <th>Location</th>
+        <th>Caretakers</th>
+        <th>Sex</th>
+        <th>Like</th>
+        <th>Dislike</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let currentAnimal of childAnimalList | age:filterByAge'>
+        <td>{{currentAnimal.name}}</td>
+        <td>{{currentAnimal.species}}</td>
+        <td>{{currentAnimal.age}}</td>
+        <td>{{currentAnimal.diet}}</td>
+        <td>{{currentAnimal.location}}</td>
+        <td>{{currentAnimal.caretakers}}</td>
+        <td>S{{currentAnimal.sex}}</td>
+        <td>{{currentAnimal.like}}</td>
+        <td>{{currentAnimal.dislike}}</td>
+        <td><button (click)="editButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Edit!</button></td>
+      </tr>
+    </tbody>
+  </table>
   `
 })
 

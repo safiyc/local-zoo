@@ -1,0 +1,19 @@
+.center-text {
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+label {
+  font-size: 20x;
+}
+
+.btn-large {
+  font-size: 20px;
+}
+
+input.form-control {
+  font-size: 20px;
+}

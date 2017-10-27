@@ -10,6 +10,7 @@ import { Animal } from './animal.model';
     <option value="youngAnimals">Young Animals</option>
     <option value="oldAnimals">Old Animals</option>
   </select>
+
   <table class='striped'>
     <thead>
       <tr>
@@ -22,6 +23,7 @@ import { Animal } from './animal.model';
         <th>Sex</th>
         <th>Like</th>
         <th>Dislike</th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
@@ -36,16 +38,30 @@ import { Animal } from './animal.model';
         <td>{{currentAnimal.sex}}</td>
         <td>{{currentAnimal.like}}</td>
         <td>{{currentAnimal.dislike}}</td>
-        <td><button (click)="editButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Edit!</button></td>
+        <td><button (click)="editButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Edit</button></td>
+        <td><button (click)="deleteButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Delete</button></td>
       </tr>
     </tbody>
   </table>
   `
+
+  // <ul *ngFor='let currentAnimal of childAnimalList | age:filterByAge' >
+  //   <li class="collapsible" data-collapsible="accordion">
+  //     <div class="collapsible-header">
+  //       <p>Name: {{currentAnimal.name}}</p>
+  //     </div>
+  //     <div class="collapsible-body">
+  //       <p>Species: {{currentAnimal.species}}</p>
+  //     </div>
+  //   </li>
+  // </ul>
+
 })
 
 export class AnimalListComponent {
   @Input() childAnimalList: Animal[];
   @Output() clickSender = new EventEmitter();
+  @Output() deleteSender = new EventEmitter();
 
   filterByAge: string = 'allAnimals';
 
@@ -55,5 +71,9 @@ export class AnimalListComponent {
 
   onChange(optionFromMenu) {
     this.filterByAge = optionFromMenu;
+  }
+
+  deleteButtonHasBeenClicked(animalToDelete: Animal) {
+    this.deleteSender.emit(animalToDelete);
   }
 }

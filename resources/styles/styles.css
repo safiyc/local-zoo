@@ -17,3 +17,7 @@ label {
 input.form-control {
   font-size: 20px;
 }
+
+div.card-panel {
+  min-width: 1000px;
+}

@@ -18,6 +18,6 @@ input.form-control {
   font-size: 20px;
 }
 
-div.card-panel {
-  min-width: 1000px;
+td {
+  font-size: 12px;
 }

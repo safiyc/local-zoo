@@ -41,7 +41,7 @@ import { Animal } from './animal.model';
         <td><button (click)="editButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Edit</button></td>
         <td><button (click)="deleteButtonHasBeenClicked(currentAnimal)" class="btn-large waves-effect waves-light">Delete</button></td>
       </tr>
-    </tbody>
+  </tbody>
   </table>
   `
 })

@@ -21,6 +21,14 @@ This program lets user (zoo staff) add/delete animals with properties such as na
   * gulp serve
 * website will launch on Chrome browser
 
+materialize collapse:
+npm install @angular/animations --save
+npm install materialize-css --save
+  styles.css:
+  @import '~materialize-css/dist/css/materialize.min.css';
+npm install angular2-collapsible --save
+
+
 ## Link
 
 Click here (https://github.com/safiyc/local-zoo.git) to access the Github page for this project.

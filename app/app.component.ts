@@ -28,7 +28,7 @@ export class AppComponent {
   title = 'Zoo Animal Tracking';
   masterAnimalList: Animal[] = [
     new Animal('Southwest Redtailed Fox', 'Tush', 3, 'Rodents', 'Southwest Trail', 4, 'Female', 'Being near boulders', 'Water'),
-    new Animal('Northern Bluefeathered Eagle', 'Buster', 2, 'Rodents', 'Northern Trail', 4, 'Male', 'Flying along a wall', 'Water'),
+    new Animal('Northern Bluefeathered Eagle', 'Buster', 1, 'Rodents', 'Northern Trail', 4, 'Male', 'Flying along a wall', 'Water'),
   ];
   selectedAnimal = null;
   addNewAnimal = false;

@@ -25,7 +25,7 @@ import { Animal } from './animal.model';
       <input [(ngModel)]='childSelectedAnimal.like' class='form-control'>
       <label>Enter Dislike</label>
       <input [(ngModel)]='childSelectedAnimal.dislike' class='form-control'>
-      <button (click)='doneButtonClicked()'>Done</button>
+      <button (click)='doneButtonClicked()' class="btn-large waves-effect waves-light">Done</button>
     </div>
   </div>
   `

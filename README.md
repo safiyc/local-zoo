@@ -34,6 +34,6 @@ Click here (https://github.com/safiyc/local-zoo.git) to access the Github page f
 
 ## License
 
-This software is licensed under the MIT licensed
+This software is licensed under the MIT License
 
 Copyright (c) 2017
